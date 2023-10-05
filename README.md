@@ -8,8 +8,8 @@ Création d'une Application de Liste de Tâches avec PHP et MySQL
 
 # Mise en place de la base de données :
 
-Créez une base de données MySQL pour stocker les informations sur les utilisateurs et leurs tâches.
-Créez des tables pour les utilisateurs et les tâches avec les champs nécessaires ( nom, prénom, adresse e-mail, mot de passe ) pour les taches(titre, description, date d'échéance, dateCréation, statut).
+*Créez une base de données MySQL pour stocker les informations sur les utilisateurs et leurs tâches.*
+*Créez des tables pour les utilisateurs et les tâches avec les champs nécessaires ( nom, prénom, adresse e-mail, mot de passe ) pour les taches(titre, description, date d'échéance, dateCréation, statut).*
 Création de l'interface utilisateur :
 
 Concevez des pages web pour l'inscription, la connexion et le tableau de bord de l'utilisateur.
