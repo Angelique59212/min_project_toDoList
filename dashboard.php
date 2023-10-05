@@ -1,4 +1,21 @@
 <?php
+session_start();
+
+require_once 'utils/DBconnect.php';
+require_once 'model/User.php';
+require_once 'dao/UserDao.php';
+require_once 'dao/imp/UserDaoImp.php';
+require_once 'services/UserService.php';
+
+$userService = new UserService();
+
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $loginUser = $userService->login($email, $password);
+}
+
 function getMessages(string $type) {
     if (isset($_SESSION[$type])) { ?>
         <div class="message-<?= $type ?>">
@@ -7,9 +24,11 @@ function getMessages(string $type) {
         unset($_SESSION[$type]);
     }
 }
+if (isset($_SESSION['user'])) {
+    // success messages.
+    getMessages('success');
+}
 
-// success messages.
-getMessages('success');
 
 if (isset($_GET['login']) && $_GET['login'] === 'success') {
     echo '<div id="success-message">Connexion réussie !</div>';
@@ -27,6 +46,14 @@ if (isset($_GET['login']) && $_GET['login'] === 'success') {
     <link rel="stylesheet" href="assets/css/inscription_connexion.css">
 </head>
 <body>
+<div class="container">
+    <div class="header">
+        <h1>Tableau de Bord</h1>
+        <a href="index.php">Accueil</a>
+    </div>
+    <img src="assets/images/bloc-to-do-list.jpeg" alt="to_do_list">
+
+</div>
 
 <script src="assets/js/app.js"></script>
 </body>

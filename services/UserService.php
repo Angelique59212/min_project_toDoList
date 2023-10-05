@@ -44,14 +44,19 @@ class UserService
             $loginUser = $this->makeUser($user);
             $_SESSION['user'] = $loginUser;
 
-            $_SESSION['success'] = 'Connexion réussie !';
-
             header("Location: dashboard.php?login=success");
             exit();
         }
         return null;
     }
 
+    public function disconnect()
+    {
+        session_destroy();
+
+        header("Location: /index.php");
+        exit();
+    }
 
     public function editUser(User $user)
     {

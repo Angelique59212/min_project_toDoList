@@ -7,7 +7,6 @@ require_once 'dao/UserDao.php';
 require_once 'dao/imp/UserDaoImp.php';
 require_once 'services/UserService.php';
 
-$userDao = new UserDaoImp();
 $userService = new UserService();
 
 if (isset($_POST['submit'])) {
