@@ -13,7 +13,7 @@ class UserDaoImp implements UserDao
     function createUser(User $user)
     {
         $stmt = $this->conn->prepare("
-            INSERT INTO User(name, firstname,email, password)
+            INSERT INTO mdf58_user(name, firstname,email, password)
             VALUES (:name, :firstname, :email, :password)
         ");
 
@@ -23,12 +23,24 @@ class UserDaoImp implements UserDao
         $stmt->bindValue('password', $user->getPassword());
 
         $stmt->execute();
+
+    }
+
+    function getUserByMail(string $email)
+    {
+        $stmt = $this->conn->prepare("
+            SELECT * FROM mdf58_user
+            WHERE email = :email
+        ");
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+        return $stmt->fetch();
     }
 
     function editUser(User $user)
     {
         $stmt = $this->conn->prepare("
-            UPDATE User
+            UPDATE mdf58_user
             SET name = :name,
                 firstname = :firstname,
                 email = :email,
@@ -46,7 +58,7 @@ class UserDaoImp implements UserDao
 
     function deleteUser(int $id)
     {
-        $stmt = $this->conn->prepare(" DELETE FROM User  WHERE id = :id");
+        $stmt = $this->conn->prepare(" DELETE FROM mdf58_user  WHERE id = :id");
         $stmt->bindValue(':id', $id);
         $stmt->execute();
     }
@@ -54,7 +66,7 @@ class UserDaoImp implements UserDao
     function getUserById(int $id)
     {
         $stmt = $this->conn->prepare("
-            SELECT * FROM User
+            SELECT * FROM mdf58_user
             WHERE id = :id
         ");
         $stmt->bindValue(':id', $id);

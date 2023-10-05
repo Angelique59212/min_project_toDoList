@@ -29,8 +29,29 @@ class UserService
     {
         $hashPassword = $this->hashPassword($user->getPassword());
         $user->setPassword($hashPassword);
-        $this->userDao->createuser($user);
+        $this->userDao->createUser($user);
+
+        $_SESSION['success'] = 'Inscription réussie !';
+        header("Location: dashboard.php?login=success");
     }
+
+    public function login(string $email, string $password)
+    {
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        $user = $this->userDao->getUserByMail($email);
+
+        if ($user && password_verify($password, $user['password'])) {
+            $loginUser = $this->makeUser($user);
+            $_SESSION['user'] = $loginUser;
+
+            $_SESSION['success'] = 'Connexion réussie !';
+
+            header("Location: dashboard.php?login=success");
+            exit();
+        }
+        return null;
+    }
+
 
     public function editUser(User $user)
     {

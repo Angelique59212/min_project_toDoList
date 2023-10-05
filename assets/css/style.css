@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1)), url("https://d1rluokkqqu56n.cloudfront.net/wpapp/uploads/2020/12/19100145/to-do-list.jpeg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0.60rem;
+}
+
+#header h1 {
+    margin: 0;
+    flex: 1;
+    text-align: center;
+}
+
+#header a {
+    text-decoration: none;
+    color: #51586e;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#container-intro {
+    padding: 24rem;
+}
+
+#intro {
+    background-color: #f3dce170;
+}
+
+#intro p {
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    text-align: center;
+}
+

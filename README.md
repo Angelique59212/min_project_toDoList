@@ -18,7 +18,7 @@ Utilisez HTML, CSS, et éventuellement JavaScript pour créer une interface util
 # Gestion de l'authentification :
 
 Implémentez un système d'inscription et de connexion pour les utilisateurs.
-Assurez-vous de stocker les mots de passe de manière sécurisée en utilisant des méthodes de hachage.
+*Assurez-vous de stocker les mots de passe de manière sécurisée en utilisant des méthodes de hachage.*
 Affichage des tâches :
 
 Affichez la liste des tâches de l'utilisateur sur son tableau de bord.
