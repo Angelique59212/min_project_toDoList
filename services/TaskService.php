@@ -82,7 +82,6 @@ class TaskService
         }
 
         usort($tasks, 'compareDueDate');
-
         return $tasks;
     }
 
