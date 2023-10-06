@@ -35,14 +35,14 @@ if (isset($_POST['submit'])) {
     </div>
     <img src="assets/images/bloc-to-do-list.jpeg" alt="to_do_list">
     <div class="form">
-        <form action="connexion.php" method="post">
+        <form action="connexion.php" class="delete-task-card2" method="post">
             <label for="email">E-Mail</label>
             <input type="text" name="email" id="email" required>
 
             <label for="password">Mot de passe</label>
             <input type="password" name="password" id="password" required>
 
-            <input type="submit" name="submit" value="Se connecter">
+            <input type="submit" name="submit" value="Se connecter" class="submit">
         </form>
     </div>
 </div>

@@ -1,7 +1,5 @@
 <?php
 
-
-
 class Task
 {
     private int $id;
@@ -13,21 +11,22 @@ class Task
     private int $idUser;
 
     public function __construct(
-        int $id,
         int $idUser,
         string $title,
         string $description,
         DateTime $dueDate,
         DateTime $dateCreation,
-        string $status)
+        string $status,
+        int $id
+    )
     {
-        $this->id = $id;
         $this->title = $title;
         $this->description = $description;
         $this->dueDate = $dueDate;
         $this->dateCreation = $dateCreation;
         $this->status = $status;
         $this->idUser = $idUser;
+        $this->id = $id;
     }
 
     public function getId()

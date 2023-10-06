@@ -39,21 +39,36 @@ img {
 }
 
 form {
-    width: 50vw;
+    width: 40vw;
+    height: 55vh;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
+    margin: 2rem auto;
     padding: 2rem;
+}
+
+.form {
+    display: flex;
+    justify-content: space-around;
 }
 
 input {
     margin: 1rem;
+    padding: 0.3rem;
     border-radius: 0.2rem;
 }
 
-#success-message {
+textarea {
+    margin: 1rem;
+}
+
+select {
+    padding: 0.3rem;
+}
+
+#error-message, #success-message {
     display: flex;
     justify-content: center;
     position: absolute;
@@ -62,10 +77,17 @@ input {
     color: white;
     padding: 2rem;
     font-weight: bold;
+}
+
+#error-message {
+    background-color: indianred;
+}
+
+#success-message {
     background-color: mediumaquamarine;
 }
 
-#success-message #close {
+#success-message #close, #error-message #close {
     margin-left: 0.8rem;
     background: transparent;
     color: white;
@@ -76,4 +98,80 @@ input {
 #close {
     border: none;
     width: 1rem;
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(9, 56, 211, 0.2);
+    transition: 0.3s;
+    margin: 1rem;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f5eeee;
+    border-radius: 0.5rem;
+    border: 1px solid #ccc;
+    width: 20vw;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 100vw;
+    padding: 8rem;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(245, 202, 244, 0.92);
+}
+
+.submit {
+    margin: 1.5rem;
+    padding: 0.7rem;
+}
+
+.delete-task-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 48vh;
+}
+
+.delete-task-card2 {
+    height: 41vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-m {
+    margin-bottom: 0.60rem;
+}
+
+.status-a-faire {
+    background-color: #ffcccb;
+    width: 9vw;
+    margin: 0.5rem auto;
+    color: #ff0000;
+}
+
+
+.status-en-cours {
+    background-color: #8c94c9;
+    width: 9vw;
+    margin: 0.5rem auto;
+    color: #1e27d3;
+}
+
+
+.status-termine {
+    background-color: #90ee90;
+    width: 9vw;
+    margin: 0.5rem auto;
+    color: #008000;
+}
+
+.edit-link {
+    text-decoration: none;
+    color: #51586e;
+
 }

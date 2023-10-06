@@ -23,8 +23,8 @@ class TaskDaoImp implements TaskDao
         ");
         $stmt->bindValue(":title", $task->getTitle());
         $stmt->bindValue(":description", $task->getDescription());
-        $stmt->bindValue("due_date", $task->getDueDate());
-        $stmt->bindValue(":date_creation", $task->getDateCreation());
+        $stmt->bindValue("due_date", $task->getDueDate()->format('Y-m-d'));
+        $stmt->bindValue(":date_creation", $task->getDateCreation()->format('Y-m-d'));
         $stmt->bindValue(":status", $task->getStatus());
         $stmt->bindValue(":id_mdf58_task", $task->getIdUser());
 
@@ -38,15 +38,15 @@ class TaskDaoImp implements TaskDao
             SET title = :title,
                 description = :description,
                 due_date = :due_date,
-                date_creation = :date_creation,
                 status = :status
                 WHERE id = :id;
         ");
         $stmt->bindValue(":title", $task->getTitle());
         $stmt->bindValue(":description", $task->getDescription());
-        $stmt->bindValue("due_date", $task->getDueDate());
-        $stmt->bindValue(":date_creation", $task->getDateCreation());
+        $dueDate = $task->getDueDate()->format('Y-m-d');
+        $stmt->bindValue(':due_date', $dueDate);
         $stmt->bindValue(":status", $task->getStatus());
+        $stmt->bindValue(':id', $task->getId());
         $stmt->execute();
     }
 
@@ -66,5 +66,13 @@ class TaskDaoImp implements TaskDao
         $stmt->bindValue(':id', $id);
         $stmt->execute();
         return $stmt->fetch();
+    }
+
+    public function getTasksByUserId(int $userId)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM mdf58_task WHERE id_mdf58_user = :userId");
+        $stmt->bindValue(':userId', $userId);
+        $stmt->execute();
+        return $stmt->fetchAll();
     }
 }

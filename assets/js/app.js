@@ -1,8 +1,18 @@
-const message = document.querySelector('#success-message');
+const successMessage = document.querySelector('#success-message');
+const errorMessage = document.querySelector('#error-message');
 
-if (message) {
+if (successMessage) {
     setTimeout(() => {
-        message.style.display = 'none';
+        successMessage.style.display = 'none';
     }, 6000);
 }
+if (errorMessage) {
+    setTimeout(() => {
+        errorMessage.style.display = 'none';
+    }, 6000);
+}
+
+
+
+
 

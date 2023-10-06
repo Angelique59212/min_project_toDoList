@@ -31,7 +31,6 @@ class UserService
         $user->setPassword($hashPassword);
         $this->userDao->createUser($user);
 
-        $_SESSION['success'] = 'Inscription réussie !';
         header("Location: dashboard.php?login=success");
     }
 
