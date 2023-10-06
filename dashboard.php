@@ -100,11 +100,11 @@ if (isset($_POST['delete_task'])) {
         <a href="index.php">Accueil</a>
         <a href="task_list.php">Liste des tâches</a>
     </div>
-    <img src="assets/images/bloc-to-do-list.jpeg" alt="to_do_list">
+    <img id="img-toDo" src="assets/images/bloc-to-do-list.jpeg" alt="to_do_list">
     <div class="form">
         <div class="task-card">
             <form action="dashboard.php" method="post">
-                <h2>Ajouter une tâche</h2>
+                <h2 class="center">Ajouter une tâche</h2>
                 <label for="task_title">Titre</label>
                 <input type="text" name="task_title" id="task_title" required>
 
@@ -127,7 +127,7 @@ if (isset($_POST['delete_task'])) {
 
         <div class="task-card">
             <form action="dashboard.php" class="delete-task-card" method="post">
-                <h2>Supprimer une tâche</h2>
+                <h2 class="center">Supprimer une tâche</h2>
                 <label for="task_id">Sélectionner la tâche à supprimer</label>
                 <select name="task_id" id="task_id" required>
                     <?php

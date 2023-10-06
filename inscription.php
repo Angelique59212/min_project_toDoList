@@ -34,7 +34,7 @@ if (isset($_POST['submit'])) {
             <h1>Inscription</h1>
             <a href="index.php">Accueil</a>
         </div>
-        <img src="assets/images/bloc-to-do-list.jpeg" alt="to_do_list">
+        <img class="image-responsiv" src="assets/images/bloc-to-do-list.jpeg" alt="to_do_list">
         <div class="form">
             <form action="inscription.php" method="post">
                 <label for="name">Nom</label>

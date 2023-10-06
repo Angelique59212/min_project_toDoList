@@ -87,11 +87,11 @@ if (isset($_SESSION['user'])) {
             ?>
             <div class="card">
                 <h2 class="card-m"><?= $task->getTitle() ?></h2>
-                <p class="card-m">Description : <?= $task->getDescription() ?></p>
+                <p class="card-m">Description : <?= $task->getDescription() ?></p>jer
                 <p class="card-m">Date d'échéance : <?= $task->getDueDate()->format('Y-m-d') ?></p>
                 <p class="<?= $statusClass ?>">Statut : <?= $task->getStatus() ?></p>
                 <a href="edit_task.php?task_id=<?= $task->getId() ?>" class="edit-link">Éditer</a>
-                <img class="card-m" src="<?= $randomImageURL ?>" alt="Image aléatoire">
+                <img class="card-m size-img" src="<?= $randomImageURL ?>" alt="Image aléatoire">
             </div>
             <?php
         }
